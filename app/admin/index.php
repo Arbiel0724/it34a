@@ -155,3 +155,6 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h1>Hello admin</h1>
 </body>
 </html> 
+
+
+<!-- add -->
