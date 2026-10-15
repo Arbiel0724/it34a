@@ -13,4 +13,3 @@ CREATE TABLE user_sessionS(
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
---committed 

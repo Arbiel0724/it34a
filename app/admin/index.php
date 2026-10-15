@@ -2,7 +2,6 @@
 
 require_once __DIR__ . '/../../config/config.php';
 
-
 requireRole('admin');
 
 logActivity(
@@ -12,7 +11,7 @@ logActivity(
     'view_activity_logs'
 );
 
-# query #3 Get all activity logs
+// query #3 Get all activity logs
 
 $stmt = $pdo->query("
 
@@ -74,35 +73,35 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <tr>
 
                     <td>
-                        <?= htmlspecialchars($activity['activity_log_id']) ?>
+                        <?= htmlspecialchars($activity['activity_log_id'] ?? '') ?>
                     </td>
 
                     <td>
-                        <?= htmlspecialchars($activity['user_id']) ?>
+                        <?= htmlspecialchars($activity['user_id'] ?? '') ?>
                     </td>
 
                     <td>
-                        <?= htmlspecialchars($activity['user_email']) ?>
+                        <?= htmlspecialchars($activity['user_email'] ?? '') ?>
                     </td>
 
                     <td>
-                        <?= htmlspecialchars($activity['activity_log_action']) ?>
+                        <?= htmlspecialchars($activity['activity_log_action'] ?? '') ?>
                     </td>
 
                     <td>
-                        <?= htmlspecialchars($activity['activity_log_status']) ?>
+                        <?= htmlspecialchars($activity['activity_log_status'] ?? '') ?>
                     </td>
 
                     <td>
-                        <?= htmlspecialchars($activity['activity_log_ip_address']) ?>
+                        <?= htmlspecialchars($activity['activity_log_ip_address'] ?? '') ?>
                     </td>
 
                     <td>
-                        <?= htmlspecialchars($activity['activity_log_user_agent']) ?>
+                        <?= htmlspecialchars($activity['activity_log_user_agent'] ?? '') ?>
                     </td>
 
                     <td>
-                        <?= htmlspecialchars($activity['activity_log_created_at']) ?>
+                        <?= htmlspecialchars($activity['activity_log_created_at'] ?? '') ?>
                     </td>
 
                 </tr>
@@ -113,6 +112,6 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     </table>
 
-</body> 
+</body>
 
 </html>
